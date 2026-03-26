@@ -441,23 +441,27 @@ a {
   flex-direction: column;
 }
 
+/* FIXED */
 .project-img {
-  height: 200px;
   width: 100%;
-  background: linear-gradient(135deg, rgba(79, 172, 254, 0.2), rgba(0, 242, 254, 0.1));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  color: rgba(255, 255, 255, 0.5);
+  height: 200px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
   border-bottom: 1px solid var(--glass-border);
-  transition: var(--transition);
 }
 
-.project-card:hover .project-img {
-  color: var(--accent-cyan);
-  background: rgba(0, 242, 254, 0.15);
-  transform: scale(1.05);
+/* FIXED */
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* NEW HOVER EFFECT ✅ */
+.project-card:hover .project-image {
+  transform: scale(1.08);
 }
 
 .project-info {
@@ -467,7 +471,6 @@ a {
   flex: 1;
   background: var(--glass-bg);
   z-index: 1;
-  /* Hide scale gap */
 }
 
 .project-info h3 {
